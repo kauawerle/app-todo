@@ -1,2 +1,37 @@
 <h1>Hello World</h1>
 <router-outlet></router-outlet>
+
+<footer>Todos os direitos a</footer>
+
+<hr />
+<h1>Property Bindings</h1>
+
+<h2>{{ nome }}</h2>
+
+<input type="text" placeholder="Insira um valor" value="{{ title }}" /><br />
+<input type="text" placeholder="Insira um valor" [value]="title" /><br />
+<input type="text" placeholder="Insira um valor" bind-value="title" /><br />
+
+<h1>Two Way Data Bindings</h1>
+<br />
+
+<input
+  type="text"
+  placeholder="Insira um valor"
+  [(ngModel)]="title"
+/>
+
+<input
+  type="text"
+  placeholder="Insira um valor"
+  [ngModel]="title"
+  (ngModelChange)="title = $event"
+/>
+
+<input
+  type="text"
+  placeholder="Insira um valor"
+  [ngModel]="title"
+  bindon-ngModel="title"
+/>
+<br />

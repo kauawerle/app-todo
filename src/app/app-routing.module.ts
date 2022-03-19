@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: '', children: publicRoutings },
   {
-    path: '', loadChildren: () => import('./private/private.module')
+    path: 'app', loadChildren: () => import('./private/private.module')
       .then((m) => m.PrivateModule)
   },
   { path: '**', component: NotFoundComponent }

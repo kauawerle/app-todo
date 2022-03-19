@@ -2,7 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonFormComponent } from './person-form/person-form.component';
 import { PersonListComponent } from './person-list/person-list.component';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+  {path: '', component: PersonListComponent},
+  {path: 'new', component: PersonListComponent},
+  {path: ':id', component: PersonListComponent},
+]
 
 
 @NgModule({
@@ -11,7 +18,7 @@ import { PersonListComponent } from './person-list/person-list.component';
     PersonListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, RouterModule.forChild(routes),
   ]
 })
 export class PersonModule { }
